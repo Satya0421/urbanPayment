@@ -1,4 +1,4 @@
-var port = 3000,
+var port = process.env.PORT || 3000;
 express = require('express'),
 app = express().use(express.static(__dirname + '/')),
 http = require('http').Server(app),
@@ -37,7 +37,9 @@ app.post('/ccavResponseHandler', function (request, response){
     //  console.log(response)
         ccavResHandler.postRes(request, response);
 });
-
+// app.listen(port, "0.0.0.0", () =>
+//   console.log(`welcome your listernig at port ${port}`)
+// );
 http.listen(port, function(){
     console.log("Node server listening on port " + port);
 });
