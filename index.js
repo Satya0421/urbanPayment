@@ -1,4 +1,4 @@
-var port = 1338,
+var port = 3000,
 express = require('express'),
 app = express().use(express.static(__dirname + '/')),
 http = require('http').Server(app),
